@@ -23,7 +23,7 @@
 
     *{box-sizing:border-box}
 
-    /* ====== PAGE BACKGROUND (LOGO AS FULL BACKGROUND) ====== */
+    /* ===== BACKGROUND (LOGO AS FULL PAGE BACKGROUND) ===== */
     body{
       margin:0;
       font-family:var(--font);
@@ -42,7 +42,7 @@
       background-attachment:fixed;
     }
 
-    /* ====== HEADER ====== */
+    /* ===== HEADER ===== */
     header{
       max-width:var(--max);
       margin:0 auto;
@@ -50,12 +50,18 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:16px;
 
       background:rgba(0,0,0,.18);
       backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(255,255,255,.08);
       border-radius:0 0 20px 20px;
+    }
+
+    .brand-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
     }
 
     .brand{
@@ -77,6 +83,12 @@
       text-shadow:0 18px 40px rgba(0,0,0,.55);
     }
 
+    .brand-tagline{
+      font-size:13px;
+      color:var(--muted);
+      letter-spacing:.4px;
+    }
+
     .nav{
       display:flex;
       gap:10px;
@@ -93,14 +105,14 @@
       white-space:nowrap;
     }
 
-    /* ====== MAIN ====== */
+    /* ===== MAIN ===== */
     main{
       max-width:var(--max);
       margin:0 auto;
       padding:22px 18px 28px;
     }
 
-    /* ====== HERO (GLASS) ====== */
+    /* ===== HERO ===== */
     .hero{
       padding:52px 22px 40px;
       border-radius:var(--radius);
@@ -131,7 +143,7 @@
       font-size:16px;
     }
 
-    /* ====== SECTIONS ====== */
+    /* ===== SECTIONS ===== */
     .section{
       margin-top:28px;
       padding:20px;
@@ -155,7 +167,7 @@
       background:rgba(0,0,0,.22);
     }
 
-    /* ====== CONTACT ====== */
+    /* ===== CONTACT ===== */
     label{
       display:block;
       margin-top:12px;
@@ -184,7 +196,7 @@
       cursor:pointer;
     }
 
-    /* ====== FOOTER ====== */
+    /* ===== FOOTER ===== */
     footer{
       max-width:var(--max);
       margin:30px auto;
@@ -197,7 +209,7 @@
       gap:10px;
     }
 
-    /* ====== RESPONSIVE ====== */
+    /* ===== RESPONSIVE ===== */
     @media(max-width:720px){
       header{
         flex-direction:column;
@@ -216,7 +228,11 @@
 <body>
 
 <header>
-  <div class="brand">SimCloud Dynamics</div>
+  <div class="brand-wrap">
+    <div class="brand">SimCloud Dynamics</div>
+    <div class="brand-tagline">Engineering trust into multi-cloud operations</div>
+  </div>
+
   <nav class="nav">
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
@@ -263,6 +279,24 @@
       </div>
     </section>
 
+    <section class="section">
+      <h2>Our Vision</h2>
+      <p class="sub">
+        At SimCloud Dynamics, our vision is to build intelligent, resilient, and
+        secure cloud infrastructures that organizations can trust to run their
+        most critical systems.
+      </p>
+      <p class="sub">
+        We focus on transforming complex multi-cloud environments into
+        predictable, optimized, and compliant platforms through advanced
+        engineering and AI-assisted orchestration.
+      </p>
+      <p class="sub">
+        Our long-term goal is to enable sustainable cloud operations that support
+        reliability, accountability, and confident growth.
+      </p>
+    </section>
+
     <section class="section" id="contact">
       <h2>Contact Us</h2>
       <form onsubmit="location.href='mailto:info@simclouddynamics.com';return false;">
@@ -285,4 +319,5 @@
 
 </body>
 </html>
+
 
