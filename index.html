@@ -8,15 +8,14 @@
 
   <style>
     :root{
-      --bg:#050B12;
       --text:#F6FBFF;
       --muted:rgba(246,251,255,.78);
 
       --brand:#47B9FF;
       --brand2:#A7E1FF;
 
-      --border:rgba(255,255,255,.16);
-      --shadow:0 24px 80px rgba(0,0,0,.55);
+      --border:rgba(255,255,255,.18);
+      --shadow:0 26px 90px rgba(0,0,0,.55);
       --radius:26px;
       --max:1100px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -24,32 +23,58 @@
 
     *{box-sizing:border-box}
 
+    /* ====== PAGE BACKGROUND (LOGO AS FULL BACKGROUND) ====== */
     body{
       margin:0;
       font-family:var(--font);
       color:var(--text);
+      min-height:100vh;
+
       background:
         radial-gradient(900px 520px at 18% 10%, rgba(71,185,255,.22), transparent 60%),
         radial-gradient(850px 520px at 92% 0%, rgba(167,225,255,.14), transparent 55%),
-        var(--bg);
-      min-height:100vh;
+        linear-gradient(180deg, rgba(5,11,18,.70), rgba(5,11,18,.92)),
+        url("logo.jpg");
+
+      background-repeat:no-repeat;
+      background-position:center top;
+      background-size:cover;
+      background-attachment:fixed;
     }
 
-    /* ---------- HEADER ---------- */
+    /* ====== HEADER ====== */
     header{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px 18px 8px;
+      padding:18px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:14px;
+
+      background:rgba(0,0,0,.18);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      border-radius:0 0 20px 20px;
     }
 
     .brand{
-      font-weight:800;
-      letter-spacing:.3px;
-      font-size:18px;
+      font-weight:900;
+      font-size:24px;
+      letter-spacing:.7px;
+      line-height:1;
+
+      background:linear-gradient(
+        90deg,
+        #ffffff 0%,
+        var(--brand2) 40%,
+        var(--brand) 100%
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+
+      text-shadow:0 18px 40px rgba(0,0,0,.55);
     }
 
     .nav{
@@ -64,122 +89,92 @@
       border-radius:999px;
       color:var(--muted);
       text-decoration:none;
-      background:rgba(0,0,0,.18);
+      background:rgba(0,0,0,.22);
       white-space:nowrap;
     }
 
-    /* ---------- HERO ---------- */
+    /* ====== MAIN ====== */
     main{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px;
+      padding:22px 18px 28px;
     }
 
+    /* ====== HERO (GLASS) ====== */
     .hero{
-      position:relative;
-      padding:48px 18px 36px;
+      padding:52px 22px 40px;
       border-radius:var(--radius);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
-      overflow:hidden;
-
-      /* glass base */
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-    }
-
-    /* watermark logo */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background-image:url("logo.jpg");
-      background-repeat:no-repeat;
-      background-position:center -10px;
-      background-size:min(520px, 85vw) auto;
-      opacity:.18;
-      filter: blur(.4px) saturate(1.05);
-      pointer-events:none;
-    }
-
-    /* glow + dark overlay */
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(700px 320px at 18% 18%, rgba(71,185,255,.22), transparent 65%),
-        radial-gradient(600px 280px at 92% 10%, rgba(167,225,255,.16), transparent 62%),
-        linear-gradient(180deg, rgba(5,11,18,.55), rgba(5,11,18,.88));
-      mix-blend-mode:screen;
-      opacity:.85;
-      pointer-events:none;
-    }
-
-    .hero > *{
-      position:relative;
-      z-index:2;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(16px);
     }
 
     h1{
-      font-size:clamp(34px, 6vw, 56px);
+      font-size:clamp(36px, 6vw, 58px);
       margin:0 0 14px;
-      letter-spacing:-.6px;
+      letter-spacing:-.7px;
       text-shadow:0 18px 40px rgba(0,0,0,.45);
     }
 
     .accent{
       background:linear-gradient(90deg,var(--brand),var(--brand2));
       -webkit-background-clip:text;
+      background-clip:text;
       color:transparent;
     }
 
     .sub{
-      max-width:70ch;
+      max-width:72ch;
       color:var(--muted);
-      line-height:1.6;
+      line-height:1.65;
+      font-size:16px;
     }
 
-    /* ---------- SECTIONS ---------- */
+    /* ====== SECTIONS ====== */
     .section{
-      margin-top:26px;
-      padding:18px;
-      border-radius:18px;
+      margin-top:28px;
+      padding:20px;
+      border-radius:20px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.08);
+      backdrop-filter:blur(14px);
     }
 
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
-    }
-
-    @media(max-width:720px){
-      .grid{grid-template-columns:1fr}
-      header{flex-direction:column; align-items:flex-start}
+      margin-top:14px;
     }
 
     .card{
       padding:14px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.14);
-      background:rgba(0,0,0,.18);
+      background:rgba(0,0,0,.22);
     }
 
-    /* ---------- CONTACT ---------- */
-    label{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+    /* ====== CONTACT ====== */
+    label{
+      display:block;
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
     input,textarea{
       width:100%;
       padding:12px;
       border-radius:12px;
       border:1px solid var(--border);
-      background:rgba(0,0,0,.2);
+      background:rgba(0,0,0,.25);
       color:var(--text);
+      margin-top:6px;
     }
 
     button{
-      margin-top:14px;
+      margin-top:16px;
       width:100%;
       padding:12px;
       border:none;
@@ -189,10 +184,10 @@
       cursor:pointer;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ====== FOOTER ====== */
     footer{
       max-width:var(--max);
-      margin:26px auto;
+      margin:30px auto;
       padding:0 18px;
       font-size:13px;
       color:var(--muted);
@@ -200,6 +195,20 @@
       justify-content:space-between;
       flex-wrap:wrap;
       gap:10px;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media(max-width:720px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .grid{
+        grid-template-columns:1fr;
+      }
+      .brand{
+        font-size:22px;
+      }
     }
   </style>
 </head>
@@ -276,3 +285,4 @@
 
 </body>
 </html>
+
