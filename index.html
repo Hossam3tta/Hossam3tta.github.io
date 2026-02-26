@@ -23,17 +23,18 @@
 
     *{box-sizing:border-box}
 
-    /* ===== BACKGROUND (LOGO AS FULL PAGE BACKGROUND) ===== */
+    /* ===== BACKGROUND (SOFTER) ===== */
     body{
       margin:0;
       font-family:var(--font);
       color:var(--text);
       min-height:100vh;
 
+      /* خفّفنا ظهور الصورة بزيادة طبقة التعتيم */
       background:
-        radial-gradient(900px 520px at 18% 10%, rgba(71,185,255,.22), transparent 60%),
-        radial-gradient(850px 520px at 92% 0%, rgba(167,225,255,.14), transparent 55%),
-        linear-gradient(180deg, rgba(5,11,18,.70), rgba(5,11,18,.92)),
+        radial-gradient(900px 520px at 18% 10%, rgba(71,185,255,.18), transparent 62%),
+        radial-gradient(850px 520px at 92% 0%, rgba(167,225,255,.12), transparent 58%),
+        linear-gradient(180deg, rgba(5,11,18,.82), rgba(5,11,18,.96)),
         url("logo.jpg");
 
       background-repeat:no-repeat;
@@ -52,7 +53,7 @@
       justify-content:space-between;
       gap:16px;
 
-      background:rgba(0,0,0,.18);
+      background:rgba(0,0,0,.20);
       backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(255,255,255,.08);
       border-radius:0 0 20px 20px;
@@ -84,9 +85,11 @@
     }
 
     .brand-tagline{
-      font-size:13px;
-      color:var(--muted);
-      letter-spacing:.4px;
+      font-size:11.5px;
+      color:rgba(246,251,255,.70);
+      letter-spacing:.5px;
+      font-weight:500;
+      font-style: italic;
     }
 
     .nav{
@@ -221,6 +224,18 @@
       .brand{
         font-size:22px;
       }
+      /* أصغر على الموبايل */
+      .brand-tagline{
+        font-size:10.5px;
+        letter-spacing:.4px;
+      }
+    }
+
+    /* تختفي على الشاشات الصغيرة جدًا */
+    @media(max-width:420px){
+      .brand-tagline{
+        display:none;
+      }
     }
   </style>
 </head>
@@ -230,7 +245,7 @@
 <header>
   <div class="brand-wrap">
     <div class="brand">SimCloud Dynamics</div>
-    <div class="brand-tagline">Engineering trust into multi-cloud operations</div>
+    <div class="brand-tagline">We deliver trusted solutions.</div>
   </div>
 
   <nav class="nav">
@@ -318,6 +333,10 @@
 </footer>
 
 </body>
+</html></footer>
+
+</body>
 </html>
+
 
 
