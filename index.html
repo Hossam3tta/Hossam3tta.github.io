@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SimCloud Dynamics — Launching Soon</title>
+  <meta name="description" content="AI-assisted frameworks for multi-cloud infrastructure optimization." />
+
+  <style>
+    :root{
+      --bg:#050B12;
+      --text:#F6FBFF;
+      --muted:rgba(246,251,255,.78);
+
+      --brand:#47B9FF;
+      --brand2:#A7E1FF;
+
+      --card:rgba(255,255,255,.09);
+      --border:rgba(255,255,255,.18);
+      --shadow:0 20px 60px rgba(0,0,0,.48);
+      --radius:18px;
+      --max:1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 10%, rgba(71,185,255,.22), transparent 60%),
+        radial-gradient(850px 520px at 92% 0%, rgba(167,225,255,.14), transparent 55%),
+        var(--bg);
+      min-height:100vh;
+    }
+
+    .bg{
+      position:fixed; inset:0;
+      background:
+        linear-gradient(to bottom, rgba(5,11,18,.70), rgba(5,11,18,.90)),
+        url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=2400&q=80");
+      background-size:cover;
+      background-position:center;
+      z-index:-2;
+    }
+
+    header{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:22px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:4px;
+      text-decoration:none;
+      color:var(--text);
+      font-weight:800;
+    }
+
+    .logo img{ height:60px }
+
+    .nav a{
+      margin-left:10px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--muted);
+      text-decoration:none;
+      background: rgba(0,0,0,.18);
+    }
+
+    main{ max-width:var(--max); margin:0 auto; padding:18px }
+
+    .hero{
+      padding:42px 18px;
+      border-radius:24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+    }
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    h1{
+      font-size:clamp(34px,6vw,56px);
+      margin:0 0 12px;
+    }
+
+    .accent{
+      background:linear-gradient(90deg,var(--brand),var(--brand2));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .sub{ color:var(--muted); line-height:1.6 }
+
+    .badge{
+      display:inline-block;
+      margin:6px 6px 0 0;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+      font-size:13px;
+    }
+
+    .card{
+      margin-top:18px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.08);
+    }
+
+    .svc-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    @media(max-width:640px){ .svc-grid{grid-template-columns:1fr} }
+
+    .svc{
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+    }
+
+    label{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.2);
+      color:var(--text);
+    }
+
+    .btn{
+      margin-top:12px;
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:none;
+      background:linear-gradient(90deg,var(--brand),var(--brand2));
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    footer{
+      max-width:var(--max);
+      margin:30px auto;
+      padding:0 18px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+
+<body>
+<div class="bg"></div>
+
+<header>
+  <a class="logo" href="#">
+    <img src="logo.jpg" alt="SimCloud Dynamics Logo">
+    <span style="font-size:14px;color:#A7E1FF">AI-Assisted Multi-Cloud Optimization</span>
+  </a>
+  <div class="nav">
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="grid">
+    <div>
+      <h1><span class="accent">Launching</span> Soon</h1>
+      <p class="sub">
+        A U.S.-based technology enterprise specializing in next-generation,
+        AI-assisted frameworks for multi-cloud infrastructure optimization.
+      </p>
+
+      <span class="badge">📍 Springfield, Illinois, USA</span>
+      <span class="badge">☁️ Multi-Cloud</span>
+      <span class="badge">🛡️ Security & Compliance</span>
+
+      <div class="card" id="services">
+        <h2>Services</h2>
+        <div class="svc-grid">
+          <div class="svc"><b>Cloud Architecture Consulting</b></div>
+          <div class="svc"><b>Simulation-Based Infrastructure Audits</b></div>
+          <div class="svc"><b>DevSecOps Integration Services</b></div>
+          <div class="svc"><b>Managed Cloud Optimization Services</b></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Why SimCloud Dynamics?</h2>
+        <div class="svc-grid">
+          <div class="svc"><b>AI-Driven Decision Intelligence</b></div>
+          <div class="svc"><b>Built for Mission-Critical Systems</b></div>
+          <div class="svc"><b>Multi-Cloud by Design</b></div>
+          <div class="svc"><b>Security & Compliance Embedded</b></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Industries We Serve</h2>
+        <div class="svc-grid">
+          <div class="svc"><b>Healthcare & Life Sciences</b></div>
+          <div class="svc"><b>Financial Services</b></div>
+          <div class="svc"><b>Government & Public Sector</b></div>
+          <div class="svc"><b>Technology & SaaS</b></div>
+          <div class="svc"><b>Enterprise & Regulated Industries</b></div>
+          <div class="svc"><b>Research & Advanced Computing</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact Us</h2>
+      <form onsubmit="location.href='mailto:info@simclouddynamics.com';return false;">
+        <label>Name</label>
+        <input required>
+        <label>Email</label>
+        <input type="email" required>
+        <label>Message</label>
+        <textarea></textarea>
+        <button class="btn">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div>© <script>document.write(new Date().getFullYear())</script> SimCloud Dynamics</div>
+  <div>Springfield, Illinois, USA</div>
+</footer>
+
+</body>
+</html>
